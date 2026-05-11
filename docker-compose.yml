@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  whatsapp-bot:
+    image: whatsapp-voice-copilot:latest
+    container_name: whatsapp-voice-copilot
+    ports:
+      - "3000:3000"
+      - "11434:11434"
+    environment:
+      - LOG_LEVEL=info
+      - OLLAMA_NUM_GPU=0
+    volumes:
+      - ./session:/app/session
+      - ./logs:/app/logs
+      - ./temp:/app/temp
+      - ./audio_cache:/app/audio_cache
+    restart: unless-stopped

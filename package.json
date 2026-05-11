@@ -1,0 +1,36 @@
+{
+  "name": "whatsapp-voice-copilot",
+  "version": "1.0.0",
+  "description": "WhatsApp voice bot with speech transcription and synthesis using Ollama/Llama3",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "lint": "eslint src/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "whatsapp",
+    "bot",
+    "voice",
+    "ollama",
+    "llama3",
+    "espeak"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "whatsapp-web.js": "^1.29.0",
+    "ollama": "^0.5.41",
+    "dotenv": "^16.4.5",
+    "axios": "^1.7.7",
+    "child_process": "^1.0.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
