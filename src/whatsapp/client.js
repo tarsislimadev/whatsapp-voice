@@ -1,14 +1,18 @@
-import { Client, LocalAuth } from 'whatsapp-web.js';
+import pkg from 'whatsapp-web.js';
 import config from '../config.js';
 import logger from '../logger.js';
 
 let client = null;
+const { Client, LocalAuth } = pkg;
 
 export function initWhatsAppClient() {
   client = new Client({
     auth: new LocalAuth({
       dataPath: config.whatsapp.sessionData,
     }),
+    puppeteer: {
+      args: ['--no-sandbox', '--disable-setuid-sandbox'],
+    },
   });
 
   client.on('qr', (qr) => {
