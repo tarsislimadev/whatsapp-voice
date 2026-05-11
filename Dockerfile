@@ -5,6 +5,7 @@ RUN apt-get update && apt-get install -y \
   curl \
   wget \
   espeak-ng \
+  zstd \
   ca-certificates \
   && rm -rf /var/lib/apt/lists/*
 
@@ -17,7 +18,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install Node.js dependencies
-RUN npm ci --only=production
+RUN npm install --omit=dev
 
 # Copy application source
 COPY src ./src
@@ -38,4 +39,3 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
 
 # Start services
 CMD ["sh", "-c", "ollama serve & npm start"]
-

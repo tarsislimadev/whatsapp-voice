@@ -1,7 +1,6 @@
-version: '3.8'
-
 services:
   whatsapp-bot:
+    build: .
     image: whatsapp-voice-copilot:latest
     container_name: whatsapp-voice-copilot
     ports:
