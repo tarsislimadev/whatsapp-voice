@@ -1,11 +1,9 @@
 services:
   whatsapp-bot:
-    build: .
-    image: whatsapp-voice-copilot:latest
-    container_name: whatsapp-voice-copilot
-    ports:
-      - "3000:3000"
-      - "11434:11434"
+    build: 
+      context: '.'
+    image: whatsapp-voice:latest
+    container_name: whatsapp-voice
     environment:
       - LOG_LEVEL=info
       - OLLAMA_NUM_GPU=0
