@@ -11,7 +11,7 @@ export default {
     model: process.env.OLLAMA_MODEL || 'llama3',
   },
   bot: {
-    name: process.env.BOT_NAME || 'WhatsApp Voice Copilot',
+    name: process.env.BOT_NAME || 'WhatsApp Voice',
     logLevel: process.env.LOG_LEVEL || 'info',
     responseTimeout: parseInt(process.env.RESPONSE_TIMEOUT || '30000', 10),
   },

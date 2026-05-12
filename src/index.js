@@ -4,12 +4,12 @@ import { setupMessageHandlers } from './whatsapp/messageHandler.js';
 
 async function main() {
   try {
-    logger.info('Starting WhatsApp Voice Copilot');
+    logger.info('Starting WhatsApp Voice');
 
     await connectWhatsApp();
     setupMessageHandlers();
 
-    logger.info('WhatsApp Voice Copilot is running. Waiting for messages...');
+    logger.info('WhatsApp Voice is running. Waiting for messages...');
 
     // Handle graceful shutdown
     process.on('SIGINT', async () => {
