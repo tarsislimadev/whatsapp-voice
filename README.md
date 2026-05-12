@@ -18,7 +18,7 @@ A WhatsApp voice bot built with Node.js that can receive voice messages, transcr
 
 - **Node.js** 18.0.0 or higher
 - **npm** 9.0.0 or higher
-- **Ollama** (for running Llama3 locally)
+- **Ollama** (for running Llama3 locally) ([see how to setup](./docs/ollama.md))
 - **eSpeak NG** (for text-to-speech)
 
 ## Installation
