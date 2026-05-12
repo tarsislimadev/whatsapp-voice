@@ -1,4 +1,4 @@
-# WhatsApp Voice Copilot
+# WhatsApp Voice
 
 A WhatsApp voice bot built with Node.js that can receive voice messages, transcribe them, process through an LLM, and reply with synthesized speech. Powered by **Ollama/Llama3** for bot intelligence and **eSpeak NG** for text-to-speech synthesis.
 

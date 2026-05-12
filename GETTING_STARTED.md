@@ -1,4 +1,4 @@
-# Getting Started with WhatsApp Voice Copilot
+# Getting Started with WhatsApp Voice
 
 ## ✅ Pre-Implementation Checklist
 
@@ -99,7 +99,7 @@ OLLAMA_MODEL=llama3
 
 # Bot Behavior
 LOG_LEVEL=info              # debug, info, warn, error
-BOT_NAME=WhatsApp Voice Copilot
+BOT_NAME=WhatsApp Voice
 RESPONSE_TIMEOUT=30000      # milliseconds
 
 # Text-to-Speech (eSpeak NG)
