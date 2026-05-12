@@ -1,4 +1,5 @@
 import pkg from 'whatsapp-web.js';
+import qrcodeTerminal from 'qrcode-terminal';
 import config from '../config.js';
 import logger from '../logger.js';
 
@@ -16,7 +17,8 @@ export function initWhatsAppClient() {
   });
 
   client.on('qr', (qr) => {
-    logger.info('QR Code received. Scan with your WhatsApp device:', { qr });
+    logger.info('QR Code received. Scan with your WhatsApp device:');
+    qrcodeTerminal.generate(qr, { small: true });
   });
 
   client.on('authenticated', () => {
