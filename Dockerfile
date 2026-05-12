@@ -36,7 +36,7 @@ RUN apt-get update && apt-get install -y \
   && rm -rf /var/lib/apt/lists/*
 
 # Install Ollama
-RUN curl -fsSL https://ollama.ai/install.sh | sh
+# RUN curl -fsSL https://ollama.ai/install.sh | sh
 
 WORKDIR /app
 
@@ -54,7 +54,7 @@ COPY .env.example ./
 RUN mkdir -p /root/.ollama temp audio_cache logs
 
 # Pre-download Llama3 model to save startup time
-RUN ollama pull llama3 || true
+# RUN ollama pull llama3 || true
 
 # Expose ports
 EXPOSE 3000 11434
