@@ -23,17 +23,24 @@ A WhatsApp voice bot built with Node.js that can receive voice messages, transcr
 
 ## Installation
 
+0. Setup Ollama
+
+```bash
+docker run --rm -d --net host --name ollama ollama/ollama
+docker exec -it ollama ollama pull llama3.2:1b
+```
+
 1. **Clone and Install Dependencies**:
-   ```bash
-   git clone <your-repo-url>
-   cd whatsapp-voice
-   npm install
-   ```
+```bash
+git clone <your-repo-url>
+cd whatsapp-voice
+npm install
+```
 
 2. **Setup Environment**:
-   ```bash
-   cp .env.example .env
-   ```
+```bash
+cp .env.example .env
+```
 
 3. **Install System Dependencies**:
    - **macOS**: `brew install espeak-ng && brew install ollama`
