@@ -7,6 +7,8 @@ services:
     environment:
       - LOG_LEVEL=info
       - OLLAMA_NUM_GPU=0
+      - OLLAMA_MODEL=llama3.2:1b
+      - OLLAMA_BASE_URL=http://localhost:11434
     volumes:
       - ./session:/app/session
       - ./logs:/app/logs

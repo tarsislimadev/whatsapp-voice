@@ -129,7 +129,7 @@ Edit `.env` for settings:
 
 ```bash
 OLLAMA_BASE_URL=http://localhost:11434
-OLLAMA_MODEL=llama3
+OLLAMA_MODEL=llama3.2:1b
 LOG_LEVEL=info
 ESPEAK_VOICE=en
 ESPEAK_RATE=150

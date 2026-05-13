@@ -68,7 +68,7 @@ All 12 JavaScript source files have been validated for correct ES6 module syntax
 ```
 WHATSAPP_SESSION_DATA=./session
 OLLAMA_BASE_URL=http://localhost:11434
-OLLAMA_MODEL=llama3
+OLLAMA_MODEL=llama3.2:1b
 LOG_LEVEL=info
 BOT_NAME=WhatsApp Voice
 RESPONSE_TIMEOUT=30000

@@ -111,13 +111,13 @@ apt-get install espeak-ng
 # From https://ollama.ai
 
 # Pull Llama3 model
-ollama pull llama3
+ollama pull llama3.2:1b
 
 # Start Ollama server (runs on localhost:11434 by default)
 ollama serve
 
 # Test the model
-curl http://localhost:11434/api/generate -d '{"model":"llama3","prompt":"Hello, how are you?"}'
+curl http://localhost:11434/api/generate -d '{"model":"llama3.2:1b","prompt":"Hello, how are you?"}'
 ```
 
 **Node.js Integration:**
@@ -133,7 +133,7 @@ const ollama = new Ollama({ base_url: 'http://localhost:11434' });
 
 async function generateBotReply(userMessage) {
   const response = await ollama.generate({
-    model: 'llama3',
+    model: 'llama3.2:1b',
     prompt: userMessage,
     stream: false,
   });
@@ -168,7 +168,7 @@ async function generateContextualReply(userId, userMessage) {
     : `User: ${userMessage}\nBot:`;
 
   const response = await ollama.generate({
-    model: 'llama3',
+    model: 'llama3.2:1b',
     prompt: prompt,
     stream: false,
   });
@@ -231,14 +231,14 @@ CMD ollama serve & npm start
 - Cache recent Ollama responses for repeated queries
 - Set `num_predict` parameter to limit response length and latency
 - Use quantized models (e.g., `llama3-q4` for faster inference)
-- Consider model variants: `llama3` (full), `llama3:7b` (smaller, faster)
+- Consider model variants: `llama3` (full), `llama3.2:1b` (smaller, faster)
 
 **Example: Faster Configuration**
 
 ```javascript
 async function generateFastReply(userMessage) {
   const response = await ollama.generate({
-    model: 'llama3:7b',  // Smaller, faster variant
+    model: 'llama3.2:1b',  // Smaller, faster variant
     prompt: userMessage,
     stream: false,
     num_predict: 150,    // Limit output length
