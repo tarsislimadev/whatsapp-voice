@@ -33,8 +33,8 @@ export async function generateBotReply(userId, userMessage) {
           model: config.ollama.model,
           prompt: prompt,
           stream: false,
-          num_predict: 150,
-          temperature: 0.7,
+          num_predict: parseInt(config.bot.num_predict, 10),
+          temperature: parseFloat(config.bot.temperature, 10),
         }),
         new Promise((_, reject) =>
           setTimeout(() => reject(new Error('Ollama request timeout')), config.bot.responseTimeout)

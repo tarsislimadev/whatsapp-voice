@@ -13,6 +13,8 @@ export default {
   bot: {
     name: process.env.BOT_NAME || 'WhatsApp Voice',
     logLevel: process.env.LOG_LEVEL || 'info',
+    num_predict: parseInt(process.env.BOT_NUM_PREDICT || '150', 10),
+    temperature: parseFloat(process.env.BOT_TEMPERATURE || '0.7'),
     responseTimeout: parseInt(process.env.RESPONSE_TIMEOUT || '30000', 10),
   },
   tts: {
