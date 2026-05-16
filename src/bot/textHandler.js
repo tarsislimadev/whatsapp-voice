@@ -12,13 +12,13 @@ export async function handleTextMessage(message) {
     const sanitized = sanitizeText(message.body);
     const botReply = await generateBotReply(message.from, sanitized);
 
-    await message.reply(botReply);
+    console.log('[await message.reply]', botReply);
     logger.info('Text reply sent', { from: message.from });
   } catch (error) {
     logger.error('Error handling text message', { error: error.message, from: message.from });
     if (error instanceof ValidationError) {
       try {
-        await message.reply('Invalid message format. Please try again.');
+        console.log('[await message.reply]', 'Invalid message format. Please try again.');
       } catch (replyError) {
         logger.error('Failed to send error reply', { error: replyError.message });
       }

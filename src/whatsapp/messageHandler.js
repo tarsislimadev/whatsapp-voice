@@ -21,7 +21,7 @@ export function setupMessageHandlers() {
       }
     } catch (error) {
       logger.error('Error handling message', { error: error.message, from: message.from });
-      await message.reply('Sorry, I encountered an error processing your message.');
+      console.log('[await message.reply]', 'Sorry, I encountered an error processing your message.');
     }
   });
 

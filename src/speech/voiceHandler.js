@@ -32,7 +32,7 @@ export async function handleVoiceMessage(message) {
 
     synthesizedPath = await synthesizeWithESpeak(botReply);
 
-    await message.reply(synthesizedPath, null, {
+    console.log('[await message.reply]', synthesizedPath, null, {
       sendMediaAsDocument: false,
       media: synthesizedPath,
     });
@@ -47,11 +47,11 @@ export async function handleVoiceMessage(message) {
 
     try {
       if (error instanceof TranscriptionError) {
-        await message.reply('Sorry, I could not understand your voice message. Please try again.');
+        console.log('[await message.reply]', 'Sorry, I could not understand your voice message. Please try again.');
       } else if (error instanceof SynthesisError) {
-        await message.reply('Sorry, I encountered an error generating a voice reply. Please try sending a text message instead.');
+        console.log('[await message.reply]', 'Sorry, I encountered an error generating a voice reply. Please try sending a text message instead.');
       } else {
-        await message.reply('Sorry, I encountered an error processing your message.');
+        console.log('[await message.reply]', 'Sorry, I encountered an error processing your message.');
       }
     } catch (replyError) {
       logger.error('Failed to send error reply', { error: replyError.message });
