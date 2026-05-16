@@ -23,13 +23,6 @@ A WhatsApp voice bot built with Node.js that can receive voice messages, transcr
 
 ## Installation
 
-0. Setup Ollama
-
-```bash
-docker run --rm -d --net host --name ollama ollama/ollama
-docker exec -it ollama ollama pull llama3.2:1b
-```
-
 1. **Clone and Install Dependencies**:
 ```bash
 git clone <your-repo-url>
@@ -51,14 +44,13 @@ cp .env.example .env
 
 ### Step 1: Start Ollama Server
 ```bash
-ollama serve
-# First run will download Llama3 (~4-5GB)
+docker run --rm -d --net host --name ollama ollama/ollama
+docker exec -it ollama ollama pull llama3.2:1b
 ```
 
 ### Step 2: Start the Bot
 ```bash
 npm start
-# Or for development with auto-reload: npm run dev
 ```
 
 ### Step 3: Scan QR Code
